@@ -33,8 +33,8 @@ angular.module('cgPrompt').factory('prompt',['$modal','$q',function($modal,$q){
             templateUrl:'angular-prompt.html',
             controller: 'cgPromptCtrl',
             resolve: {
-                options:function(){ 
-                    return options; 
+                options:function(){
+                    return options;
                 }
             }
         }).result.then(function(result){
@@ -95,7 +95,7 @@ angular.module('cgPrompt').controller('cgPromptCtrl',['$scope','options','$timeo
             }
         }
     },100);
-    
+
 
 }]);
 
@@ -122,7 +122,7 @@ angular.module('cgPrompt').run(['$templateCache', function($templateCache) {
     "                <div class=\"input-group\" ng-if=\"options.values\">\n" +
     "                    <input id=\"cgPromptInput\" type=\"text\" class=\"form-control\" placeholder=\"{{options.label}}\" ng-model=\"input.name\" required ng-change=\"changed=true\" autofocus=\"autofocus\"/>\n" +
     "\n" +
-    "                    <div class=\"input-group-btn\">\n" +
+    "                    <div class=\"input-group-btn\" dropdown>\n" +
     "                        <button type=\"button\" class=\"btn btn-default dropdown-toggle\" data-toggle=\"dropdown\"><span class=\"caret\"></span></button>\n" +
     "                        <ul class=\"dropdown-menu pull-right\">\n" +
     "                            <li ng-repeat=\"value in options.values\"><a href=\"\" ng-click=\"input.name = value\">{{value}}</a></li>\n" +
